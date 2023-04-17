@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>explorer Spaceship</title>
+<style>
+  body {
+    background-color: #222;
+    color: #ddd;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+  }
+
+  h1, h2 {
+    color: #fff;
+    text-align: center;
+  }
+
+  img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    margin-bottom: 10px;
+  }
+
+  table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    border: 1px solid #fff;
+  }
+
+  th, td {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #fff;
+  }
+
+  input[type="number"] {
+    display: block;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 4px;
+    border: none;
+    background-color: #444;
+    color: #ddd;
+    font-size: 16px;
+    text-align: center;
+    width: 200px;
+    max-width: 100%;
+  }
+
+  button {
+    display: block;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 4px;
+    border: none;
+    background-color: #ccc;
+    color: #222;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+
+  button:hover {
+    background-color: #ddd;
+  }
+
+  #explorer-error {
+    color: #f00;
+    font-weight: bold;
+    text-align: center;
+  }
+</style>
+
+
+  </head>
+  <body>
+      <h1 id="explorer-title">Explorer Spaceship</h1>
+    <div id="explorer-selector">
+      <label for="explorer-number">Select Explorer Identification number:</label>
+      <input type="number" id="explorer-number" name="explorer-number" min="1" max="1000">
+      <button onclick="displayexplorer()">Submit</button>
+      <div id="explorer-error"></div>
+    </div>
+
+    <div id="explorer-image-container">
+      <img id="explorer-image" src="https://images.service.cometh.io/2000000.png" alt="Explorer Spaceship #1">
+    </div>
+    <h2>Overview</h2>
+    <p>Initially designed for long distance travel at a time where humanity was bound find new resources to survive, the Explorer proved perfect for the exploitation of long period asteroids. It features a small windowed deck but a vast interior usually equipped with all necessary amenities to kill time from bilboquet to vintage bugged kernels.</p>
+    <script>
+      function displayexplorer() {
+        const explorerNumber = parseInt(document.getElementById("explorer-number").value)-1;
+        const explorerImage = document.getElementById("explorer-image");
+        const explorerImageSrc = `https://images.service.cometh.io/${(explorerNumber < 10 ? '200000' : (explorerNumber < 100 ? '20000' : '2000'))}${explorerNumber}.png`;
+        const explorerError = document.getElementById("explorer-error");
+        if (explorerNumber < 1 || explorerNumber > 1000 || !Number.isInteger(explorerNumber)) {
+          explorerImage.style.display = "none";
+          explorerError.textContent = "Please enter a valid integer between 1 and 1000.";
+          return;
+        }
+        explorerError.textContent = "";
+        explorerImage.style.display = "block";
+        explorerImage.src = explorerImageSrc;
+        explorerImage.alt = `explorer Spaceship #${explorerNumber}`;
+      }
+    </script>
+    
+		<h2>Specifications</h2>
+		<table>
+			<tr>
+				<th>Model</th>
+				<td>Explorer</td>
+			</tr>
+			<tr>
+				<th>Identification</th>
+				<td>N/A explorerNumber</td>
+			</tr>
+			<tr>
+				<th>Primary Color</th>
+				<td>N/A</td>
+			</tr>	
+			<tr>
+				<th>Secondary Color</th>
+				<td>N/A</td>
+			</tr>										
+			<tr>
+				<th>Current Owner</th>
+				<td>N/A see blockchain</td>
+			</tr>
+			<tr>
+				<th>Satus</th>
+				<td>N/A not or for sale with URLs</td>
+			</tr>
+			<tr>
+				<th>Manufacturer</th>
+				<td>Human race</td>
+			</tr>
+			<tr>
+				<th>Primary Use</th>
+				<td>Mining, transportation</td>
+			</tr>
+			<tr>
+				<th>Length</th>
+				<td>50 meters</td>
+			</tr>
+			<tr>
+				<th>Width</th>
+				<td>30 meters</td>
+			</tr>
+			<tr>
+				<th>Height</th>
+				<td>20 meters</td>
+			</tr>
+			<tr>
+				<th>Top Speed</th>
+				<td>500 km/h</td>
+			</tr>
+			<tr>
+				<th>Crew</th>
+				<td>1-3</td>
+			</tr>
+			<tr>
+				<th>Weapons</th>
+				<td>None</td>
+			</tr>
+			<tr>
+			
+
+  </body>
+</html>
+
